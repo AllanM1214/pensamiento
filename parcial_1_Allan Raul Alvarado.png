@@ -1,0 +1,22 @@
+num=int(input("ingrese un numero de de 5 digitos:"))
+dm = num // 10000
+um = (num // 1000)%10
+c = (num // 100)%10
+d = (num // 10)%10
+u = num % 10
+lista = [dm,um,c,d,u]
+for i in range(4):
+ for j in range(4-i):
+  if lista[j]>lista[j+1]:
+   lista[j], lista[j+1]= lista[j+1],lista[j]
+mayor=int("".join(map(str,lista)))
+menor=int("".join(map(str,lista[::-1])))
+print (f"menor a mayor:{mayor},mayor a menor:{menor}")
+
+if num >= 100000:
+ print("numero no valido"),
+elif num < 10000:
+ print ("numero no valido")
+elif num >= 10000:
+ print("numero valido")
+ 
